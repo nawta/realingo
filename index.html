@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Realingo — 自分の写真から語学を学ぶ</title>
+<meta name="title-ja" content="Realingo — 自分の写真から語学を学ぶ">
+<meta name="title-en" content="Realingo — Learn a language from your own photos">
+<meta name="description" content="Realingo は、あなたのカメラロールにある写真から語学の練習問題をつくる iPhone / iPad アプリです。18言語、CEFR A1〜C1 対応。無料の問題生成は端末内で動きます。">
+<meta name="desc-ja" content="Realingo は、あなたのカメラロールにある写真から語学の練習問題をつくる iPhone / iPad アプリです。18言語、CEFR A1〜C1 対応。無料の問題生成は端末内で動きます。">
+<meta name="desc-en" content="Realingo turns the photos already on your phone into language exercises. 18 languages, CEFR A1 to C1, and free on-device generation.">
+<link rel="canonical" href="https://nawta.github.io/realingo/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Realingo — Learn a language from your own photos">
+<meta property="og:description" content="Realingo turns the photos already on your phone into language exercises. 18 languages, CEFR A1 to C1, and free on-device generation.">
+<meta property="og:url" content="https://nawta.github.io/realingo/">
+<meta property="og:image" content="https://nawta.github.io/realingo/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05061f">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+/* Set the language before first paint so the other version never flashes. */
+(function(){var r=document.documentElement;r.className+=" js";var l=(location.search.match(/[?&]lang=(ja|en)/)||[])[1];try{if(!l)l=localStorage.getItem("realingo-lang");}catch(e){}if(l!=="ja"&&l!=="en")l=(navigator.language||"en").toLowerCase().indexOf("ja")===0?"ja":"en";r.setAttribute("data-lang",l);r.setAttribute("lang",l);})();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img src="assets/icon-180.png" alt="" width="30" height="30">
+      Realingo
+    </a>
+    <nav class="site-nav">
+      <a href="#how"><span class="ja">使い方</span><span class="en">How it works</span></a>
+      <a href="#features"><span class="ja">できること</span><span class="en">Features</span></a>
+      <a href="#privacy"><span class="ja">プライバシー</span><span class="en">Privacy</span></a>
+      <a href="#pricing"><span class="ja">料金</span><span class="en">Pricing</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/realingo/id6791108476">
+        <span class="ja">App Store</span><span class="en">App Store</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hero-pill">
+        <span class="ja">iPhone・iPad ／ <b>無料でダウンロード</b></span>
+        <span class="en">iPhone and iPad ／ <b>free to download</b></span>
+      </p>
+      <h1>
+        <span class="ja">きのう撮った一枚が、<br><span class="accent">きょうの教材になる。</span></span>
+        <span class="en">Your moment.<br><span class="accent">Your target language.</span></span>
+      </h1>
+      <p class="lead ja">Realingo は、カメラロールにある写真から語学の練習問題をつくるアプリです。問題文はその写真に写っているものから組み立てられるので、自分が実際に居た場面の言葉を覚えられます。</p>
+      <p class="lead en">Realingo builds language exercises out of the photos already on your phone. The sentences come from what is in the picture, so you practise the words for places you have really been.</p>
+      <div class="hero-cta">
+        <a class="appstore" href="https://apps.apple.com/us/app/realingo/id6791108476">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span><small class="ja">ダウンロード</small><small class="en">Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="btn btn-ghost" href="#how"><span class="ja">使い方を見る</span><span class="en">See how it works</span></a>
+      </div>
+      <p class="hero-note">
+        <span class="ja">iOS 17.0 以降 ・ 18言語 ・ 無料の問題生成は端末内で動きます</span>
+        <span class="en">iOS 17.0 or later · 18 languages · Free generation runs on your device</span>
+      </p>
+    </div>
+    <div class="phone">
+      <img src="assets/shot-01.webp" width="660" height="1434" alt="Realingo の練習画面。ヘルシンキのカフェで撮った写真をもとに、フィンランド語の文を単語から組み立てている。">
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="wrap">
+    <ul>
+      <li><b>18</b><span class="ja">対応言語</span><span class="en">Languages</span></li>
+      <li><b>A1–C1</b><span class="ja">CEFR の難易度</span><span class="en">CEFR levels</span></li>
+      <li><b>4</b><span class="ja">練習の形式</span><span class="en">Practice formats</span></li>
+      <li><b><span class="ja">オフライン</span><span class="en">Offline</span></b><span class="ja">端末内生成は通信不要</span><span class="en">On-device generation</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="ja">使い方</span><span class="en">How it works</span></p>
+      <h2><span class="ja">自分が撮った写真から問題をつくる</span><span class="en">Exercises made from the photo you chose</span></h2>
+      <p class="lead ja">カメラロールから1枚選ぶか、その場で撮るか、Realingo に古い写真を選ばせます。学ぶ言語と CEFR レベルを決めると、その写真に写っているものをもとに練習問題ができます。</p>
+      <p class="lead en">Pick a photo from your library, take a new one, or let Realingo suggest an older one. Choose a learning language and a CEFR level, and it builds practice around what is in that picture.</p>
+    </div>
+    <div class="cards cards-3">
+      <div class="card reveal">
+        <span class="num">1</span>
+        <h3><span class="ja">写真を選ぶ</span><span class="en">Choose a photo</span></h3>
+        <p class="ja">カメラロールの1枚、その場で撮った写真、Realingo が提案する古い写真のどれでも使えます。</p>
+        <p class="en">Use a photo from your library, one you take right now, or an older one Realingo suggests.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">2</span>
+        <h3><span class="ja">言語とレベルを決める</span><span class="en">Set the language and level</span></h3>
+        <p class="ja">18言語と CEFR A1〜C1 から選びます。文の長さも変えられます。</p>
+        <p class="en">18 languages and CEFR levels A1 to C1. You can also set how long the sentences are.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">3</span>
+        <h3><span class="ja">答えて、説明を読む</span><span class="en">Answer and read the explanation</span></h3>
+        <p class="ja">並べ替え・穴埋め・スピーキング・ライティングに答えると、正誤とあわせて、なぜその言い方になるのかが返ります。</p>
+        <p class="en">Answer the exercise and you get the result together with an explanation of why the phrasing works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section id="features" style="padding-top:24px">
+  <div class="wrap">
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <p class="eyebrow"><span class="ja">練習</span><span class="en">Practice</span></p>
+        <h2><span class="ja">その場面で使う一文をつくる</span><span class="en">Build the sentence you would actually say</span></h2>
+        <p class="ja">ヘルシンキのカフェで撮った写真なら、課題は「コーヒーとシナモンロールをていねいに注文する」。写っているものと、そこでしたいことが結びついた課題になります。</p>
+        <p class="en">From a café photo taken in Helsinki, the task reads “Order a coffee and a cinnamon bun politely.” The exercise ties what is in the picture to what you would want to do there.</p>
+        <ul>
+          <li><span class="ja">単語の並べ替え</span><span class="en">Word arrangement</span></li>
+          <li><span class="ja">穴埋め</span><span class="en">Fill in the blank</span></li>
+          <li><span class="ja">スピーキング</span><span class="en">Speaking</span></li>
+          <li><span class="ja">ライティング</span><span class="en">Writing</span></li>
+        </ul>
+      </div>
+      <div class="phone">
+        <img src="assets/shot-01.webp" width="660" height="1434" loading="lazy" alt="写真の下に「Order a coffee and a cinnamon bun politely.」という課題が表示され、フィンランド語の単語カードが並んでいる画面。">
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <p class="eyebrow"><span class="ja">フィードバック</span><span class="en">Feedback</span></p>
+        <h2><span class="ja">正解だけでなく、理由まで返す</span><span class="en">Feedback that explains the phrasing</span></h2>
+        <p class="ja">答え合わせのあとに短い説明が付きます。たとえば Haluaisin が「〜をいただきたいのですが」にあたる自然でていねいな言い方だ、というところまで示します。</p>
+        <p class="en">Each answer comes back with a short explanation — for example, that Haluaisin is a natural, polite way to say “I would like.”</p>
+      </div>
+      <div class="phone">
+        <img src="assets/shot-02.webp" width="660" height="1434" loading="lazy" alt="解答が正解と判定され、その下に Haluaisin の使い方についての説明が表示されている画面。">
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <p class="eyebrow"><span class="ja">記録</span><span class="en">Memory</span></p>
+        <h2><span class="ja">練習した表現は写真ごと残る</span><span class="en">Expressions stay attached to the photo</span></h2>
+        <p class="ja">その日に練習した表現は、きっかけになった写真といっしょに日付順で残ります。単語帳をめくるかわりに、どの場面で覚えたかから思い出せます。</p>
+        <p class="en">Everything you practise is kept by date, next to the photo that prompted it, so you can reach the phrase through the scene you learned it in.</p>
+      </div>
+      <div class="phone">
+        <img src="assets/shot-03.webp" width="660" height="1434" loading="lazy" alt="1枚の写真と、その写真で練習した3つの表現が正誤とともに並んでいる記録画面。">
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <p class="eyebrow"><span class="ja">復習</span><span class="en">Review</span></p>
+        <h2><span class="ja">忘れるころに戻ってくる復習</span><span class="en">Reviews that start from the photo</span></h2>
+        <p class="ja">復習は写真から始まります。先に場面を見て思い出そうとしてから表現が出るので、言葉と場面が結びついたまま定着します。</p>
+        <p class="en">A review shows the photo first. You try to recall the phrase, and the expression appears after, so the words stay tied to the scene.</p>
+      </div>
+      <div class="phone">
+        <img src="assets/shot-04.webp" width="660" height="1434" loading="lazy" alt="復習画面。3つの表現が復習待ちとして並び、それぞれに元の写真のサムネイルが付いている。">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section id="privacy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="ja">プライバシー</span><span class="en">Privacy</span></p>
+      <h2><span class="ja">写真を送らずに使えます</span><span class="en">It works without sending your photos anywhere</span></h2>
+      <p class="lead ja">無料の問題生成は端末内の画像モデルで動きます。モデルを一度ダウンロードすれば、写真の解析も問題の生成もオフラインで完結し、この流れでは写真はアップロードされません。スピーキングの音声認識も端末内で動きます。</p>
+      <p class="lead en">Free generation uses a vision model that runs on your device. After the one-time model download, photo analysis and exercise generation work offline, and the photo is not uploaded for that flow. Speech recognition for speaking exercises also stays on the device.</p>
+    </div>
+    <div class="cards cards-2">
+      <div class="card reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/><path d="M2.5 2.5l19 19"/></svg></span>
+        <h3><span class="ja">端末内で完結する生成</span><span class="en">Generation on your device</span></h3>
+        <p class="ja">約 2.8 GB のモデルを一度だけダウンロードします（メモリ 3 GB 以上の iPhone が必要）。以降は通信なし、回数制限なしで使えます。</p>
+        <p class="en">A one-time download of about 2.8 GB, on an iPhone with at least 3 GB of memory. After that it runs with no network and no daily limit.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 2.5v6.2L4.2 18a2.6 2.6 0 0 0 2.3 3.9h11a2.6 2.6 0 0 0 2.3-3.9L15 8.7V2.5"/><path d="M7.5 2.5h9"/><path d="M6.6 14.8h10.8"/></svg></span>
+        <h3><span class="ja">研究への提供は任意</span><span class="en">Research sharing is opt-in</span></h3>
+        <p class="ja">学習データの提供は初期状態でオフです。設定でオンにしたときだけ、位置情報などを取り除いた写真と解答が送られます。いつでも止められます。</p>
+        <p class="en">Sharing your learning data is off by default. Only when you turn it on in Settings does the app send the photo, with its metadata stripped, along with your answer. You can stop at any time.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.8 19.5a4.3 4.3 0 0 1-.5-8.6 5.8 5.8 0 0 1 11.1-1.2 3.9 3.9 0 0 1 .4 7.7"/><path d="M12 21.5v-8"/><path d="M9.2 16.3 12 13.5l2.8 2.8"/></svg></span>
+        <h3><span class="ja">クラウド生成は選んだときだけ</span><span class="en">Cloud generation only when you ask</span></h3>
+        <p class="ja">Premium の Google Gemini による生成を選んだときに限り、その写真がクラウドに送られます。端末内の無料生成はそのまま使えます。</p>
+        <p class="en">A photo goes to the cloud only when you explicitly choose Premium generation through Google Gemini. Free on-device generation stays available either way.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M5.5 5.5l13 13"/></svg></span>
+        <h3><span class="ja">広告なし、追跡なし</span><span class="en">No ads, no tracking</span></h3>
+        <p class="ja">他社のアプリやサイトをまたいだ追跡はしません。広告も表示しません。バージョン 1.0 にはユーザー同士の共有機能もありません。</p>
+        <p class="en">The app does not track you across other companies’ apps or websites and shows no ads. Version 1.0 has no sharing between users.</p>
+      </div>
+    </div>
+    <p style="margin-top:28px">
+      <a href="privacy.html"><span class="ja">プライバシーポリシーを読む →</span><span class="en">Read the privacy policy →</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ================= LANGUAGES ================= -->
+<section id="languages" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="ja">対応言語</span><span class="en">Languages</span></p>
+      <h2><span class="ja">18言語、CEFR A1〜C1</span><span class="en">18 languages, CEFR A1 to C1</span></h2>
+      <p class="lead ja">学ぶ言語はメイン画面からいつでも切り替えられます。難易度は CEFR の A1 から C1 まで、文の長さも 3〜15 語の範囲で指定できます。</p>
+      <p class="lead en">Switch your learning language at any time from the main screen. Difficulty follows the CEFR scale from A1 to C1, and you can set sentence length between 3 and 15 words.</p>
+    </div>
+    <ul class="chips reveal">
+      <li><span class="ja">フィンランド語</span><span class="en">Finnish</span></li>
+      <li><span class="ja">英語</span><span class="en">English</span></li>
+      <li><span class="ja">日本語</span><span class="en">Japanese</span></li>
+      <li><span class="ja">スペイン語</span><span class="en">Spanish</span></li>
+      <li><span class="ja">フランス語</span><span class="en">French</span></li>
+      <li><span class="ja">ドイツ語</span><span class="en">German</span></li>
+      <li><span class="ja">イタリア語</span><span class="en">Italian</span></li>
+      <li><span class="ja">ロシア語</span><span class="en">Russian</span></li>
+      <li><span class="ja">韓国語</span><span class="en">Korean</span></li>
+      <li><span class="ja">中国語（簡体字）</span><span class="en">Chinese (Simplified)</span></li>
+      <li><span class="ja">アラビア語</span><span class="en">Arabic</span></li>
+      <li><span class="ja">ヒンディー語</span><span class="en">Hindi</span></li>
+      <li><span class="ja">ギリシャ語</span><span class="en">Greek</span></li>
+      <li><span class="ja">ブルガリア語</span><span class="en">Bulgarian</span></li>
+      <li><span class="ja">ベラルーシ語</span><span class="en">Belarusian</span></li>
+      <li><span class="ja">カザフ語</span><span class="en">Kazakh</span></li>
+      <li><span class="ja">キルギス語</span><span class="en">Kyrgyz</span></li>
+      <li><span class="ja">アイルランド語</span><span class="en">Irish</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="ja">料金</span><span class="en">Pricing</span></p>
+      <h2><span class="ja">練習そのものは無料です</span><span class="en">The practice itself is free</span></h2>
+      <p class="lead ja">Premium が足すのはクラウド生成の1点だけです。端末内での生成は、契約していてもいなくても無制限に使えます。</p>
+      <p class="lead en">Premium adds one thing: cloud generation. Generating on your device stays unlimited whether or not you subscribe.</p>
+    </div>
+    <div class="cards cards-2">
+      <div class="card plan reveal">
+        <h3><span class="ja">無料</span><span class="en">Free</span></h3>
+        <p class="price"><span class="ja">¥0</span><span class="en">Free</span></p>
+        <ul>
+          <li><span class="ja">端末内での問題生成（無制限）</span><span class="en">Unlimited on-device exercise generation</span></li>
+          <li><span class="ja">並べ替え・穴埋め・スピーキング・ライティング</span><span class="en">Word arrangement, fill-in-the-blank, speaking, writing</span></li>
+          <li><span class="ja">18言語、CEFR A1〜C1</span><span class="en">18 languages, CEFR A1 to C1</span></li>
+          <li><span class="ja">復習スケジュールと学習履歴</span><span class="en">Review schedules, history, and progress</span></li>
+          <li><span class="ja">サインインは任意、ローカルのバックアップと復元</span><span class="en">Optional sign-in, plus local backup and restore</span></li>
+        </ul>
+      </div>
+      <div class="card plan featured reveal">
+        <span class="tag">Premium</span>
+        <h3><span class="ja">Realingo Premium</span><span class="en">Realingo Premium</span></h3>
+        <p class="price"><span class="ja">月額 / 年額</span><span class="en">Monthly / yearly</span></p>
+        <ul>
+          <li><span class="ja">Google Gemini によるクラウド生成（1日 30 回まで）</span><span class="en">Cloud generation through Google Gemini, up to 30 a day</span></li>
+          <li><span class="ja">無料の端末内生成もそのまま使えます</span><span class="en">Free on-device generation still available</span></li>
+          <li><span class="ja">価格は App Store に表示されます</span><span class="en">Prices are shown in the App Store</span></li>
+          <li><span class="ja">購入は Apple アカウントで管理し、いつでも解約できます</span><span class="en">Managed by your Apple Account, cancel at any time</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2><span class="ja">よくある質問</span><span class="en">Frequently asked questions</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary><span class="ja">モデルのダウンロードは必要ですか。</span><span class="en">Why is the app downloading a model, and do I need it?</span></summary>
+        <div>
+          <p class="ja">無料の問題生成は端末内の画像モデルで動くので、初回に約 2.8 GB のダウンロードが必要です。メモリ 3 GB 以上の iPhone で動きます。<strong>設定 &gt; AI Model Settings</strong> から、またはアプリが案内する「Use on-device AI」から取得できます。以降はオフラインで、回数制限なく使えます。</p>
+          <p class="en">Free exercise generation runs on your phone with a local vision model. It is a one-time download of about 2.8 GB and needs an iPhone with at least 3 GB of memory. Open <strong>Settings &gt; AI Model Settings</strong>, or tap <strong>Use on-device AI</strong> when the app offers it. After that, generation works offline with no daily limit.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="ja">Premium では何が増えますか。</span><span class="en">What do I get with Premium?</span></summary>
+        <div>
+          <p class="ja">増えるのは、クラウド AI（Google Gemini）による問題生成が1日 30 回まで使えるようになる点です。端末内での生成は、契約しなくても無料・無制限のまま使えます。</p>
+          <p class="en">Premium adds one thing: exercise generation through cloud AI (Google Gemini), up to 30 a day. Generating on your device stays free and unlimited whether or not you subscribe.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="ja">購入を復元するには。</span><span class="en">How do I restore a purchase?</span></summary>
+        <div>
+          <p class="ja">アプリのサブスクリプション画面で <strong>Restore Purchases</strong> を押してください。購入時と同じ Apple アカウントでサインインしている必要があります。サブスクリプションは Apple が管理しているので、端末の「設定 &gt; Apple アカウント &gt; サブスクリプション」からも確認・解約できます。</p>
+          <p class="en">Open the subscription screen in the app and tap <strong>Restore Purchases</strong>. Make sure you are signed in to the same Apple Account you used for the original purchase. Subscriptions are managed by Apple, so you can also review or cancel them under Settings &gt; your Apple Account &gt; Subscriptions.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="ja">アカウントとデータを削除したいのですが。</span><span class="en">How do I delete my account and data?</span></summary>
+        <div>
+          <p class="ja">アプリの <strong>Profile</strong> から <strong>Request deletion</strong> を選びます。これは削除依頼を記録するもので、クラウド上のデータがその場で消えるわけではありません。別のアカウントを誤って変更しないよう本人確認をしたうえで、通常 30 日以内に処理します。研究データの提供は設定からすぐに止められます。</p>
+          <p class="en">In the app, open <strong>Profile</strong> and tap <strong>Request deletion</strong>. This records a pending request rather than deleting cloud data immediately. We verify your identity first so that another account is never changed by mistake, and normally process requests within 30 days. You can stop future research sharing immediately from Settings.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="ja">どの言語を学べますか。</span><span class="en">Which languages can I learn?</span></summary>
+        <div>
+          <p class="ja">フィンランド語、英語、日本語、スペイン語、フランス語、ドイツ語、韓国語、中国語（簡体字）など 18 言語です。学ぶ言語はメイン画面からいつでも切り替えられ、難易度は CEFR の A1 から C1 まで選べます。</p>
+          <p class="en">Eighteen languages, including Finnish, English, Japanese, Spanish, French, German, Korean, and Chinese (Simplified). You can switch your learning language at any time from the main screen, and difficulty follows the CEFR scale from A1 to C1.</p>
+        </div>
+      </details>
+    </div>
+    <p style="margin-top:28px">
+      <a href="support.html"><span class="ja">サポートページを見る →</span><span class="en">Go to the support page →</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="final reveal">
+      <h2><span class="ja">きょうの一枚から始める</span><span class="en">Start with a photo you took today</span></h2>
+      <p class="lead ja">App Store から無料でダウンロードできます。質問や不具合の報告、更新のお知らせの受け取りはメールでどうぞ。</p>
+      <p class="lead en">Realingo is free on the App Store. For questions, bug reports, or update announcements, email works best.</p>
+      <div class="final-cta">
+        <a class="appstore" href="https://apps.apple.com/us/app/realingo/id6791108476">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span><small class="ja">ダウンロード</small><small class="en">Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="btn btn-ghost" href="mailto:nawta1998@gmail.com?subject=Realingo"><span class="ja">問い合わせる</span><span class="en">Contact us</span></a>
+        <a class="btn btn-ghost" href="mailto:nawta1998@gmail.com?subject=Realingo%20updates&amp;body=Realingo%20の更新のお知らせを受け取りたいです。%0A%0AI%20would%20like%20to%20receive%20Realingo%20updates."><span class="ja">更新のお知らせを受け取る</span><span class="en">Get update announcements</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="copy">© 2026 Naoto Nishida</span>
+    <nav>
+      <a href="privacy.html"><span class="ja">プライバシーポリシー</span><span class="en">Privacy Policy</span></a>
+      <a href="support.html"><span class="ja">サポート</span><span class="en">Support</span></a>
+      <a href="mailto:nawta1998@gmail.com"><span class="ja">問い合わせ</span><span class="en">Contact</span></a>
+      <a href="https://apps.apple.com/us/app/realingo/id6791108476">App Store</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

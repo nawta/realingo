@@ -1,0 +1,453 @@
+/* Realingo — landing site
+   Palette sampled from the App Store screenshot set in docs/appstore_review/2026-08-14. */
+
+:root {
+  --ink:        #05061f;
+  --ink-2:      #0a0b2c;
+  --surface:    rgba(255, 255, 255, 0.045);
+  --surface-2:  rgba(255, 255, 255, 0.08);
+  --line:       rgba(255, 255, 255, 0.12);
+  --line-soft:  rgba(255, 255, 255, 0.07);
+  --text:       #eceef8;
+  --muted:      #a4a8ca;
+  --violet:     #6d5ce0;
+  --indigo:     #3d4fc4;
+  --aqua:       #6fe3da;
+  --coral:      #ff8e78;
+  --radius:     18px;
+  --maxw:       1120px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  font-feature-settings: "palt" 1;
+  overflow-x: hidden;
+}
+
+/* Ambient glow, fixed behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -10% -10% auto -10%;
+  height: 150vh;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 55vh at 18% 8%,  rgba(61, 79, 196, 0.42), transparent 62%),
+    radial-gradient(52vw 46vh at 85% 18%, rgba(109, 92, 224, 0.34), transparent 64%),
+    radial-gradient(44vw 40vh at 62% 60%, rgba(255, 142, 120, 0.13), transparent 66%),
+    radial-gradient(40vw 40vh at 10% 72%, rgba(111, 227, 218, 0.11), transparent 66%);
+  filter: blur(6px);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--aqua); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- language switch ---------- */
+html[data-lang="ja"] .en,
+html[data-lang="en"] .ja { display: none !important; }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  background: rgba(5, 6, 31, 0.72);
+  border-bottom: 1px solid var(--line-soft);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 64px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  font-size: 1.06rem;
+}
+.brand:hover { text-decoration: none; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+
+.site-nav { display: flex; gap: 22px; margin-left: auto; font-size: 0.92rem; }
+.site-nav a { color: var(--muted); }
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+
+.header-actions { display: flex; align-items: center; gap: 12px; margin-left: 18px; }
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.lang-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.lang-toggle button[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--text);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--violet), var(--indigo));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(109, 92, 224, 0.35);
+}
+.btn-primary:hover { box-shadow: 0 14px 38px rgba(109, 92, 224, 0.5); }
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--text);
+  background: var(--surface);
+}
+.btn-ghost:hover { background: var(--surface-2); }
+.btn-sm { padding: 8px 15px; font-size: 0.86rem; }
+
+/* App Store badge, drawn rather than hot-linked */
+.appstore {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  padding: 9px 18px 9px 16px;
+  color: #fff;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.appstore:hover { text-decoration: none; transform: translateY(-1px); border-color: rgba(255, 255, 255, 0.7); }
+.appstore svg { width: 24px; height: 28px; fill: #fff; flex: none; }
+.appstore span { display: flex; flex-direction: column; line-height: 1.12; }
+.appstore small { font-size: 0.64rem; letter-spacing: 0.02em; opacity: 0.92; }
+.appstore strong { font-size: 1.22rem; font-weight: 600; letter-spacing: -0.01em; }
+
+/* ---------- section scaffolding ---------- */
+section { padding: 96px 0; }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--aqua);
+  margin: 0 0 14px;
+}
+h1, h2, h3 {
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  text-wrap: balance;      /* keeps a single character off its own last line */
+}
+/* Japanese sets wider than Latin at the same size, and it has no spaces to wrap
+   at, so headings get their own scale and never break inside a word. */
+html[data-lang="ja"] h1,
+html[data-lang="ja"] h2,
+html[data-lang="ja"] h3 { word-break: keep-all; overflow-wrap: anywhere; }
+html[data-lang="ja"] h1 { font-size: clamp(1.85rem, 4.4vw, 2.95rem); line-height: 1.34; }
+html[data-lang="ja"] h2 { font-size: clamp(1.4rem, 3vw, 2.05rem); line-height: 1.38; }
+html[data-lang="ja"] h3 { font-size: 1.08rem; line-height: 1.5; }
+html[data-lang="ja"] .lead { font-size: 1.02rem; }
+h1 { font-size: clamp(2.1rem, 4.8vw, 3.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.5rem); font-weight: 700; }
+h3 { font-size: 1.18rem; font-weight: 700; }
+p  { margin: 0 0 16px; color: var(--muted); }
+.lead { text-wrap: pretty; }
+.lead { font-size: 1.08rem; color: #c8cbe4; max-width: 62ch; }
+.section-head { max-width: 64ch; margin-bottom: 48px; }
+.accent { color: var(--aqua); }
+
+/* ---------- hero ---------- */
+.hero { padding: 84px 0 64px; }
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.hero-pill b { color: var(--text); font-weight: 600; }
+.hero h1 { margin-bottom: 20px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 30px; }
+.hero-note { font-size: 0.85rem; color: #7f84a8; margin-top: 18px; }
+
+/* ---------- phone frame ---------- */
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 46px;
+  padding: 10px;
+  background: linear-gradient(160deg, #2b2d55, #0d0e26 55%, #1b1d3d);
+  box-shadow:
+    0 40px 90px rgba(3, 4, 20, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.09) inset;
+}
+.phone img {
+  width: 100%;
+  /* height: auto is required: the img width/height attributes are presentational
+     hints, and without this the attribute height wins and the picture is cropped. */
+  height: auto;
+  aspect-ratio: 1320 / 2868;
+  object-fit: cover;
+  border-radius: 37px;
+  background: #f4f4f8;
+}
+.phone::after {
+  content: "";
+  position: absolute;
+  inset: -14% -18%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(109, 92, 224, 0.5), transparent 72%);
+  filter: blur(24px);
+}
+.hero .phone { max-width: 312px; }
+.feature .phone { max-width: 268px; }
+
+/* ---------- stat strip ---------- */
+.stats { padding: 0 0 26px; }
+.stats ul {
+  list-style: none;
+  margin: 0;
+  padding: 26px 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  text-align: center;
+}
+.stats b { display: block; font-size: 1.55rem; font-weight: 800; letter-spacing: -0.02em; }
+.stats span { font-size: 0.83rem; color: var(--muted); }
+
+/* ---------- cards ---------- */
+.cards { display: grid; gap: 20px; }
+.cards-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.card {
+  border: 1px solid var(--line-soft);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+}
+.card h3 { margin-bottom: 10px; }
+.card p:last-child { margin-bottom: 0; }
+.card .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--violet), var(--indigo));
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.card .ico { display: block; margin-bottom: 14px; }
+.card .ico svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--aqua);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- alternating feature rows ---------- */
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 38px 0;
+}
+.feature:nth-child(even) .feature-text { order: 2; }
+.feature-text .eyebrow { margin-bottom: 10px; }
+.feature ul { margin: 18px 0 0; padding-left: 1.15em; color: var(--muted); }
+.feature li { margin-bottom: 7px; }
+
+/* ---------- language chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 9px; }
+.chips li {
+  list-style: none;
+  border: 1px solid var(--line-soft);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  color: #ced1e8;
+}
+.chips { padding: 0; margin: 0; }
+
+/* ---------- pricing ---------- */
+.plan { position: relative; }
+.plan.featured { border-color: rgba(109, 92, 224, 0.55); background: rgba(109, 92, 224, 0.1); }
+.plan .price { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 18px; color: var(--text); }
+.plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); }
+.plan li { margin-bottom: 8px; }
+.tag {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aqua);
+}
+
+/* ---------- FAQ ---------- */
+.faq details {
+  border-bottom: 1px solid var(--line-soft);
+  padding: 20px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.04rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--text);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--aqua); font-weight: 400; font-size: 1.4rem; line-height: 1; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details > div { padding-top: 12px; }
+.faq p:last-child { margin-bottom: 0; }
+
+/* ---------- closing CTA ---------- */
+.final {
+  text-align: center;
+  border: 1px solid var(--line-soft);
+  border-radius: 26px;
+  padding: 66px 28px;
+  background:
+    radial-gradient(70% 120% at 50% 0%, rgba(109, 92, 224, 0.28), transparent 70%),
+    var(--surface);
+}
+.final .lead { margin-left: auto; margin-right: auto; }
+.final-cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* ---------- footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line-soft);
+  padding: 44px 0 56px;
+  font-size: 0.89rem;
+  color: var(--muted);
+}
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 20px; margin-left: auto; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--text); }
+.copy { font-size: 0.83rem; }
+
+/* ---------- document pages (privacy / support) ---------- */
+.doc { padding: 64px 0 96px; }
+.doc .wrap { max-width: 760px; }
+.doc h1 { font-size: clamp(1.9rem, 4.4vw, 2.6rem); }
+.doc h2 {
+  font-size: 1.32rem;
+  margin-top: 52px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.doc h3 { font-size: 1.06rem; margin-top: 34px; }
+.doc ul { color: var(--muted); padding-left: 1.2em; }
+.doc li { margin-bottom: 8px; }
+.doc .meta { color: #7f84a8; font-size: 0.88rem; margin-bottom: 34px; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 20px 0; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--muted); }
+.doc th { background: var(--surface-2); color: var(--text); font-weight: 600; }
+.tablewrap { overflow-x: auto; }
+
+/* ---------- reveal on scroll ----------
+   Hidden only once the inline head script has added .js, so a reader with
+   JavaScript off still sees every section. */
+html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+html.js .reveal.shown { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover, .appstore:hover { transform: none; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  section { padding: 72px 0; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 44px; }
+  .hero { padding: 56px 0 40px; }
+  .feature { grid-template-columns: 1fr; gap: 34px; padding: 44px 0; }
+  .feature:nth-child(even) .feature-text { order: 0; }
+  .cards-3, .cards-2 { grid-template-columns: 1fr; }
+  .stats ul { grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
+  .site-nav { display: none; }
+  .header-actions { margin-left: auto; }
+}
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
+  .final { padding: 48px 20px; }
+  .card { padding: 24px 20px; }
+}
