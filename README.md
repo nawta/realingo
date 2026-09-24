@@ -1,4 +1,4 @@
-# Realingo — website
+# Realingo website
 
 Landing page, privacy policy, and support page for [Realingo](https://apps.apple.com/us/app/realingo/id6791108476),
 an iOS app that turns your own photos into language exercises.
@@ -30,9 +30,10 @@ html[data-lang="ja"] .en,
 html[data-lang="en"] .ja { display: none !important; }
 ```
 
-A small inline script in each `<head>` sets `data-lang` before the first paint,
-from `localStorage` or the browser language, so the wrong language never flashes.
-`site.js` handles the toggle buttons and stores the choice.
+A small inline script in each `<head>` sets `data-lang` before the first paint, so
+the wrong language never flashes. It takes `?lang=ja` or `?lang=en` from the URL
+first, then the stored choice, then the browser language. `site.js` handles the
+toggle buttons and stores what you pick.
 
 To add text, add both versions. A block that exists in only one language will
 show up in the other language too.
@@ -43,15 +44,15 @@ The copy tracks the live App Store listing and the source repository
 `nawta/Realingo_v3`:
 
 - Screenshots: `docs/appstore_review/2026-08-14/screenshots/raw/en-US/` in that
-  repository, resized to 660 px wide and converted to WebP. The raw captures are
-  used rather than the App Store composites, because the composites have English
-  captions burned into the image.
+  repository, resized to 660 px wide and converted to WebP. The App Store
+  composites in `final/` have English captions burned into the image, which the
+  language switch cannot translate, so the site uses the raw captures instead.
 - App icon: `realingo_product/ProductAssets.xcassets/AppIcon-Product.appiconset/AppIcon1024.png`.
 - Privacy policy and FAQ: `hosting/product/public/privacy.html` and `support.html`.
   Those two pages are the ones currently linked from App Store Connect; the pages
   here are the same text in the site design, plus a Japanese translation. The
   support page there said 15 learning languages, which disagreed with the App
-  Store listing and the app itself — this site says 18.
+  Store listing and the app itself. This site says 18.
 
 If any of that changes in the app, update it here too, and keep the Japanese and
 English versions in step.
@@ -68,9 +69,10 @@ those links to this site, update the URLs in App Store Connect and in
 
 ## Things to swap in later
 
-- **Mailing list.** The "get update announcements" button is a `mailto:` link.
-  Replace both `mailto:` links in the closing section of `index.html` with a form
-  URL (Google Forms, Buttondown, and so on) when there is one.
-- **Custom domain.** Add a `CNAME` file containing the domain, point a DNS
-  `CNAME` record at `nawta.github.io`, and update `og:url` and the `canonical`
-  link in the three HTML files.
+The "get update announcements" button is a `mailto:` link for now. When there is a
+sign-up form (Google Forms, Buttondown, and so on), replace both `mailto:` links in
+the closing section of `index.html` with its URL.
+
+For a custom domain, add a `CNAME` file containing the domain, point a DNS `CNAME`
+record at `nawta.github.io`, and update `og:url` and the `canonical` link in the
+three HTML files.
